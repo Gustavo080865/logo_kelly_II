@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at center, #111, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #1a1a1a, #000);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gold-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: conic-gradient(from 0deg, #f6e27a, #d4af37, #f6e27a);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  background-clip: border-box;
+  animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.logo-title {
+  font-family: 'Cinzel', serif;
+  font-size: 60px;
+  color: #f6e27a;
+  letter-spacing: 5px;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  z-index: 2;
+}
+
+.subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 6px;
+  z-index: 2;
+}
+
+.slogan {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #b3b3b3;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  z-index: 2;
+}
+
+.logo-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shine 5s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
